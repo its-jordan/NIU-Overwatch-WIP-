@@ -1,0 +1,311 @@
+// Scss Document
+@use "sass:map";
+
+// Team Colors
+$bg-colors: (
+	"niu": #C8102E,  		// Norhtern Illinois
+	"bgsu": #FD5000, 		// Bowling Green
+	"akron": #041E42, 		// Akron
+	"toledo": #003E7E, 		// Toledo
+	"wmu": #532E1F, 		// Western Michigan
+	"miami": #C41230, 		// Miami
+	"emu": #046A38, 		// Eastern Michigan
+	"kentstate": #003976, 	// Kent State
+	"cmu": #6A0032, 		// Central Michigan
+	"ohio": #00694E,		// Ohio
+	"buffalo": #005bbb,		// Buffalo
+	"neu": #000000, 		// Northereastern
+	"nku": #FFC72C,			// Northern Kentucky
+	"bsu": #BA0C2F,			// Ball State University
+);
+$accent-bar-color: (
+	"niu": #FFFFFF, 		// Northern Illinois
+	"bgsu": #4f2c1d, 		// Bowling Green
+	"akron": #004C9D, 		// Akron
+	"toledo": #102B5F, 		// Toledo
+	"wmu": #F1C500, 		// Western Michigan
+	"miami": #000000, 		// Miami
+	"emu": #FFFFFF, 		// Eastern Michigan
+	"kentstate": #EBAB21, 	// Kent State
+	"cmu": #FFC82E, 		// Central Michigan
+	"ohio": #024230,		// Ohio
+	"buffalo": #FFFFFF,		// Buffalo
+	"neu": #C8102E, 		// Northereastern
+	"nku": #000000,			// Northern Kentucky
+	"bsu": #FFFFFF,			// Ball State University
+);
+$uniname: (
+	"niu": "Northern Illinois", 
+	"bgsu": "Bowling Green",
+	"akron": "University of Akron", 
+	"toledo": "University of Toledo", 
+	"wmu": "Western Michigan", 
+	"miami": "Miami University", 
+	"emu": "Eastern Michigan", 
+	"kentstate": "Kent State University", 
+	"cmu": "Central Michigan", 
+	"ohio": "Ohio University",
+	"buffalo": "University of Buffalo",
+	"neu": "Northeastern University",
+	"nku": "Northern Kentucky",			
+	"bsu": "Ball State University",			
+);
+$logo-var: (
+	"niu": url("../images/esc-niu.png"), 
+	"bgsu": url("../images/esc-bgsu.png"),
+	"akron": url("../images/esc-akron.png"), 
+	"toledo": url("../images/esc-toledo.png"),
+	"wmu": url("../images/esc-wmu.png"), 
+	"miami": url("../images/esc-miami.png"),
+	"emu": url("../images/esc-emu.png"), 
+	"kentstate": url("../images/esc-kentstate.png"),
+	"cmu": url("../images/esc-cmu.png"), 
+	"ohio": url("../images/esc-ohio.png"),
+	"buffalo": url("../images/esc-buffalo.png"), 
+	"neu": url("../images/esc-neu.png"),
+	"nku": url("../images/esc-nku.png"), 
+	"bsu": url("../images/esc-bsu.png"),
+);
+
+// Controls
+
+#controls{
+	position: absolute;
+	width: 100%;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	flex-flow: row nowrap;
+	padding: 50px;
+	box-sizing: border-box;
+	transition: .3s ease;
+	font-size: 14px;
+	box-shadow: -5px 0 20px rgba(0,0,0,.2);
+}
+#controls-away{
+	flex-grow: 1;
+	border-right: 1px solid rgba(0,0,0,.25);
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+}
+#controls-home{
+	flex-grow: 1;
+	border-right: 1px solid rgba(0,0,0,.25);
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+}
+#controls-all{
+	flex-grow: 1;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+}
+.input{
+	margin: 5px 0;
+	padding: 3px;
+}
+.number{
+	width: 60px;
+	margin-left: 5px;
+}
+#team-select{
+	display: flex;
+	flex-flow: row nowrap;
+	& .input:first-of-type{
+		margin-right: 5px;
+	}
+}
+
+// Page
+body{
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	font-size: 24px;
+}
+
+// Network Logo
+#esc{
+	display: flex;
+	justify-content: center;
+	color: #fff;
+	font-size: 18px;
+	background-color: rgba(200,16,46,.75);
+	width: max-content;
+	padding: 2px 10px;
+	text-transform: uppercase;
+}
+
+// Scoreboard
+#scoreboard-base{
+	display: flex;
+	flex-flow: row nowrap;
+	width: 100vw;
+}
+#left, #right{
+	margin-top: 18px;
+	width: 36%; // 36% = Original
+	height: 50px;
+	display: flex;
+	& .team-name{
+		display: flex;
+		font-size: 12px;
+		font-weight: 700;
+		flex-grow: 1;
+		align-items: center;
+		text-transform: uppercase;
+		color: #FFF;
+	}
+	& .team-name::before{
+		display: block;
+		font-size: 24px;
+		padding: 0 5px 0 0;
+	}
+	& .team-name::after{
+		display: flex;
+		font-size: 14px;
+		padding: 0 0 0 5px;
+		content: "0-0";
+	}
+	& .team-score{
+		display: flex;
+		flex-grow: 0;
+		padding: 0 25px;
+		align-items: center;
+		background-color: rgba(0,0,0,.2);
+		color: #FFFFFF;
+	}
+	& .attack, .defense{
+		height: 30px;
+		width: 30px;
+	}
+	& .accent-bar{
+		width: 10px;
+	}
+	& .team-logo{
+		display: flex;
+		width: 87px;
+		flex-grow: 0;
+		overflow-y: hidden;
+		overflow-x: visible;
+	}
+	& .score-0::before{
+		content:"0";
+	}
+	
+}
+#left{
+	flex-flow: row nowrap;
+	& .team-name{
+		justify-content: flex-end;
+		padding: 0 15px 0 0;
+	}
+	& .attack, .defense{
+		padding: 10px 15px 10px 0;
+	}
+}
+#mid{
+	margin-top: -2px;
+	width: calc(50% + 10px); // 38% + 10px = Original
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	& #series-info{
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		color: #fff;
+		background-color: rgba(0,0,0,.75);
+		width: max-content;
+		padding: 2px 10px;
+		font-size: 18px;
+		text-transform: uppercase;
+		& .delimeter{
+			padding: 0 10px;
+		}
+		& .map::before{
+			content:"Map ";
+		}
+	}
+}
+#left{
+	margin-left: 20px; // Original = 0
+}
+#right{
+	margin-right: 20px; // Original = 0
+	flex-flow: row-reverse nowrap;
+	& .team-name{
+		justify-content: flex-start;
+		padding: 0 0 0 15px;
+	}
+	& .attack, .defense{
+		padding: 10px 0 10px 15px;
+	}
+}
+
+// Teams
+@each $name, $color in $bg-colors{
+	.#{$name}{
+		background-color: $color;
+	}
+}
+@each $name, $nickname in $uniname{
+	.#{$name} .team-name::before {
+		content: $nickname;
+		color: #FFF;
+	}
+}
+@each $name, $accent-color in $accent-bar-color{
+	.#{$name} .accent-bar {
+		background-color: $accent-color;
+	}
+}
+@each $name, $logo in $logo-var{
+	.#{$name} .team-logo {
+		background-image: $logo;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+}
+
+// Teams Accessibility
+.nku {
+	& .team-name {
+		color: #000!important;
+		&::before{
+			color: #000!important;			
+		}
+	}
+	& .team-score{
+		background-color: rgba(0,0,0,.1)!important;
+		color: #000!important;
+	}
+} 
+.neu {
+	& .team-score{
+		background-color: rgba(255,255,255,.1)!important;
+	}
+} 
+.emu {
+	& .team-logo{
+		filter: contrast(100) invert(1);
+	}
+}
+.buffalo {
+	& .team-logo{
+		background-position: 0 -30px!important;	
+	}
+}
+.niu {
+	& .team-logo{
+		background-position: 0 -50px!important;	
+	}
+}

@@ -1,0 +1,264 @@
+@use "sass:map";
+/* line 72, scss-originals/scoreboard.scss */
+#controls { position: absolute; width: 100%; right: 0; bottom: 0; display: flex; flex-flow: row nowrap; padding: 50px; box-sizing: border-box; transition: .3s ease; font-size: 14px; box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2); }
+
+/* line 85, scss-originals/scoreboard.scss */
+#controls-away { flex-grow: 1; border-right: 1px solid rgba(0, 0, 0, 0.25); box-sizing: border-box; display: flex; justify-content: center; }
+
+/* line 92, scss-originals/scoreboard.scss */
+#controls-home { flex-grow: 1; border-right: 1px solid rgba(0, 0, 0, 0.25); box-sizing: border-box; display: flex; justify-content: center; }
+
+/* line 99, scss-originals/scoreboard.scss */
+#controls-all { flex-grow: 1; box-sizing: border-box; display: flex; justify-content: center; }
+
+/* line 105, scss-originals/scoreboard.scss */
+.input { margin: 5px 0; padding: 3px; }
+
+/* line 109, scss-originals/scoreboard.scss */
+.number { width: 60px; margin-left: 5px; }
+
+/* line 113, scss-originals/scoreboard.scss */
+#team-select { display: flex; flex-flow: row nowrap; }
+/* line 116, scss-originals/scoreboard.scss */
+#team-select .input:first-of-type { margin-right: 5px; }
+
+/* line 122, scss-originals/scoreboard.scss */
+body { background: transparent; padding: 0; margin: 0; width: 100%; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 24px; }
+
+/* line 133, scss-originals/scoreboard.scss */
+#esc { display: flex; justify-content: center; color: #fff; font-size: 18px; background-color: rgba(200, 16, 46, 0.75); width: max-content; padding: 2px 10px; text-transform: uppercase; }
+
+/* line 145, scss-originals/scoreboard.scss */
+#scoreboard-base { display: flex; flex-flow: row nowrap; width: 100vw; }
+
+/* line 150, scss-originals/scoreboard.scss */
+#left, #right { margin-top: 18px; width: 36%; height: 50px; display: flex; }
+/* line 155, scss-originals/scoreboard.scss */
+#left .team-name, #right .team-name { display: flex; font-size: 12px; font-weight: 700; flex-grow: 1; align-items: center; text-transform: uppercase; color: #FFF; }
+/* line 164, scss-originals/scoreboard.scss */
+#left .team-name::before, #right .team-name::before { display: block; font-size: 24px; padding: 0 5px 0 0; }
+/* line 169, scss-originals/scoreboard.scss */
+#left .team-name::after, #right .team-name::after { display: flex; font-size: 14px; padding: 0 0 0 5px; content: "0-0"; }
+/* line 175, scss-originals/scoreboard.scss */
+#left .team-score, #right .team-score { display: flex; flex-grow: 0; padding: 0 25px; align-items: center; background-color: rgba(0, 0, 0, 0.2); color: #FFFFFF; }
+/* line 183, scss-originals/scoreboard.scss */
+#left .attack, #left .defense, #right .attack, #right .defense { height: 30px; width: 30px; }
+/* line 187, scss-originals/scoreboard.scss */
+#left .accent-bar, #right .accent-bar { width: 10px; }
+/* line 190, scss-originals/scoreboard.scss */
+#left .team-logo, #right .team-logo { display: flex; width: 87px; flex-grow: 0; overflow-y: hidden; overflow-x: visible; }
+/* line 197, scss-originals/scoreboard.scss */
+#left .score-0::before, #right .score-0::before { content: "0"; }
+
+/* line 202, scss-originals/scoreboard.scss */
+#left { flex-flow: row nowrap; }
+/* line 204, scss-originals/scoreboard.scss */
+#left .team-name { justify-content: flex-end; padding: 0 15px 0 0; }
+/* line 208, scss-originals/scoreboard.scss */
+#left .attack, #left .defense { padding: 10px 15px 10px 0; }
+
+/* line 212, scss-originals/scoreboard.scss */
+#mid { margin-top: -2px; width: calc(50% + 10px); display: flex; flex-flow: row nowrap; justify-content: center; align-content: center; align-items: center; }
+/* line 220, scss-originals/scoreboard.scss */
+#mid #series-info { display: flex; flex-flow: row nowrap; justify-content: center; color: #fff; background-color: rgba(0, 0, 0, 0.75); width: max-content; padding: 2px 10px; font-size: 18px; text-transform: uppercase; }
+/* line 230, scss-originals/scoreboard.scss */
+#mid #series-info .delimeter { padding: 0 10px; }
+/* line 233, scss-originals/scoreboard.scss */
+#mid #series-info .map::before { content: "Map "; }
+
+/* line 238, scss-originals/scoreboard.scss */
+#left { margin-left: 20px; }
+
+/* line 241, scss-originals/scoreboard.scss */
+#right { margin-right: 20px; flex-flow: row-reverse nowrap; }
+/* line 244, scss-originals/scoreboard.scss */
+#right .team-name { justify-content: flex-start; padding: 0 0 0 15px; }
+/* line 248, scss-originals/scoreboard.scss */
+#right .attack, #right .defense { padding: 10px 0 10px 15px; }
+
+/* line 255, scss-originals/scoreboard.scss */
+.niu { background-color: #C8102E; }
+
+/* line 255, scss-originals/scoreboard.scss */
+.bgsu { background-color: #FD5000; }
+
+/* line 255, scss-originals/scoreboard.scss */
+.akron { background-color: #041E42; }
+
+/* line 255, scss-originals/scoreboard.scss */
+.toledo { background-color: #003E7E; }
+
+/* line 255, scss-originals/scoreboard.scss */
+.wmu { background-color: #532E1F; }
+
+/* line 255, scss-originals/scoreboard.scss */
+.miami { background-color: #C41230; }
+
+/* line 255, scss-originals/scoreboard.scss */
+.emu { background-color: #046A38; }
+
+/* line 255, scss-originals/scoreboard.scss */
+.kentstate { background-color: #003976; }
+
+/* line 255, scss-originals/scoreboard.scss */
+.cmu { background-color: #6A0032; }
+
+/* line 255, scss-originals/scoreboard.scss */
+.ohio { background-color: #00694E; }
+
+/* line 255, scss-originals/scoreboard.scss */
+.buffalo { background-color: #005bbb; }
+
+/* line 255, scss-originals/scoreboard.scss */
+.neu { background-color: #000000; }
+
+/* line 255, scss-originals/scoreboard.scss */
+.nku { background-color: #FFC72C; }
+
+/* line 255, scss-originals/scoreboard.scss */
+.bsu { background-color: #BA0C2F; }
+
+/* line 260, scss-originals/scoreboard.scss */
+.niu .team-name::before { content: "Northern Illinois"; color: #FFF; }
+
+/* line 260, scss-originals/scoreboard.scss */
+.bgsu .team-name::before { content: "Bowling Green"; color: #FFF; }
+
+/* line 260, scss-originals/scoreboard.scss */
+.akron .team-name::before { content: "University of Akron"; color: #FFF; }
+
+/* line 260, scss-originals/scoreboard.scss */
+.toledo .team-name::before { content: "University of Toledo"; color: #FFF; }
+
+/* line 260, scss-originals/scoreboard.scss */
+.wmu .team-name::before { content: "Western Michigan"; color: #FFF; }
+
+/* line 260, scss-originals/scoreboard.scss */
+.miami .team-name::before { content: "Miami University"; color: #FFF; }
+
+/* line 260, scss-originals/scoreboard.scss */
+.emu .team-name::before { content: "Eastern Michigan"; color: #FFF; }
+
+/* line 260, scss-originals/scoreboard.scss */
+.kentstate .team-name::before { content: "Kent State University"; color: #FFF; }
+
+/* line 260, scss-originals/scoreboard.scss */
+.cmu .team-name::before { content: "Central Michigan"; color: #FFF; }
+
+/* line 260, scss-originals/scoreboard.scss */
+.ohio .team-name::before { content: "Ohio University"; color: #FFF; }
+
+/* line 260, scss-originals/scoreboard.scss */
+.buffalo .team-name::before { content: "University of Buffalo"; color: #FFF; }
+
+/* line 260, scss-originals/scoreboard.scss */
+.neu .team-name::before { content: "Northeastern University"; color: #FFF; }
+
+/* line 260, scss-originals/scoreboard.scss */
+.nku .team-name::before { content: "Northern Kentucky"; color: #FFF; }
+
+/* line 260, scss-originals/scoreboard.scss */
+.bsu .team-name::before { content: "Ball State University"; color: #FFF; }
+
+/* line 266, scss-originals/scoreboard.scss */
+.niu .accent-bar { background-color: #FFFFFF; }
+
+/* line 266, scss-originals/scoreboard.scss */
+.bgsu .accent-bar { background-color: #4f2c1d; }
+
+/* line 266, scss-originals/scoreboard.scss */
+.akron .accent-bar { background-color: #004C9D; }
+
+/* line 266, scss-originals/scoreboard.scss */
+.toledo .accent-bar { background-color: #102B5F; }
+
+/* line 266, scss-originals/scoreboard.scss */
+.wmu .accent-bar { background-color: #F1C500; }
+
+/* line 266, scss-originals/scoreboard.scss */
+.miami .accent-bar { background-color: #000000; }
+
+/* line 266, scss-originals/scoreboard.scss */
+.emu .accent-bar { background-color: #FFFFFF; }
+
+/* line 266, scss-originals/scoreboard.scss */
+.kentstate .accent-bar { background-color: #EBAB21; }
+
+/* line 266, scss-originals/scoreboard.scss */
+.cmu .accent-bar { background-color: #FFC82E; }
+
+/* line 266, scss-originals/scoreboard.scss */
+.ohio .accent-bar { background-color: #024230; }
+
+/* line 266, scss-originals/scoreboard.scss */
+.buffalo .accent-bar { background-color: #FFFFFF; }
+
+/* line 266, scss-originals/scoreboard.scss */
+.neu .accent-bar { background-color: #C8102E; }
+
+/* line 266, scss-originals/scoreboard.scss */
+.nku .accent-bar { background-color: #000000; }
+
+/* line 266, scss-originals/scoreboard.scss */
+.bsu .accent-bar { background-color: #FFFFFF; }
+
+/* line 271, scss-originals/scoreboard.scss */
+.niu .team-logo { background-image: url("../images/esc-niu.png"); background-size: cover; background-repeat: no-repeat; background-position: center; }
+
+/* line 271, scss-originals/scoreboard.scss */
+.bgsu .team-logo { background-image: url("../images/esc-bgsu.png"); background-size: cover; background-repeat: no-repeat; background-position: center; }
+
+/* line 271, scss-originals/scoreboard.scss */
+.akron .team-logo { background-image: url("../images/esc-akron.png"); background-size: cover; background-repeat: no-repeat; background-position: center; }
+
+/* line 271, scss-originals/scoreboard.scss */
+.toledo .team-logo { background-image: url("../images/esc-toledo.png"); background-size: cover; background-repeat: no-repeat; background-position: center; }
+
+/* line 271, scss-originals/scoreboard.scss */
+.wmu .team-logo { background-image: url("../images/esc-wmu.png"); background-size: cover; background-repeat: no-repeat; background-position: center; }
+
+/* line 271, scss-originals/scoreboard.scss */
+.miami .team-logo { background-image: url("../images/esc-miami.png"); background-size: cover; background-repeat: no-repeat; background-position: center; }
+
+/* line 271, scss-originals/scoreboard.scss */
+.emu .team-logo { background-image: url("../images/esc-emu.png"); background-size: cover; background-repeat: no-repeat; background-position: center; }
+
+/* line 271, scss-originals/scoreboard.scss */
+.kentstate .team-logo { background-image: url("../images/esc-kentstate.png"); background-size: cover; background-repeat: no-repeat; background-position: center; }
+
+/* line 271, scss-originals/scoreboard.scss */
+.cmu .team-logo { background-image: url("../images/esc-cmu.png"); background-size: cover; background-repeat: no-repeat; background-position: center; }
+
+/* line 271, scss-originals/scoreboard.scss */
+.ohio .team-logo { background-image: url("../images/esc-ohio.png"); background-size: cover; background-repeat: no-repeat; background-position: center; }
+
+/* line 271, scss-originals/scoreboard.scss */
+.buffalo .team-logo { background-image: url("../images/esc-buffalo.png"); background-size: cover; background-repeat: no-repeat; background-position: center; }
+
+/* line 271, scss-originals/scoreboard.scss */
+.neu .team-logo { background-image: url("../images/esc-neu.png"); background-size: cover; background-repeat: no-repeat; background-position: center; }
+
+/* line 271, scss-originals/scoreboard.scss */
+.nku .team-logo { background-image: url("../images/esc-nku.png"); background-size: cover; background-repeat: no-repeat; background-position: center; }
+
+/* line 271, scss-originals/scoreboard.scss */
+.bsu .team-logo { background-image: url("../images/esc-bsu.png"); background-size: cover; background-repeat: no-repeat; background-position: center; }
+
+/* line 281, scss-originals/scoreboard.scss */
+.nku .team-name { color: #000 !important; }
+/* line 283, scss-originals/scoreboard.scss */
+.nku .team-name::before { color: #000 !important; }
+/* line 287, scss-originals/scoreboard.scss */
+.nku .team-score { background-color: rgba(0, 0, 0, 0.1) !important; color: #000 !important; }
+
+/* line 293, scss-originals/scoreboard.scss */
+.neu .team-score { background-color: rgba(255, 255, 255, 0.1) !important; }
+
+/* line 298, scss-originals/scoreboard.scss */
+.emu .team-logo { filter: contrast(100) invert(1); }
+
+/* line 303, scss-originals/scoreboard.scss */
+.buffalo .team-logo { background-position: 0 -30px !important; }
+
+/* line 308, scss-originals/scoreboard.scss */
+.niu .team-logo { background-position: 0 -50px !important; }
