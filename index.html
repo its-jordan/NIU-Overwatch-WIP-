@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Scoreboard</title>
+<link href="css/scoreboard.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="js/main.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+	<div id="scoreboard-base">
+		<div id="left" class="niu">
+			<div class="accent-bar"></div>
+			<div class="team-logo"></div>
+			<div class="team-name"></div>
+			<div id="away-team-score" class="team-score score-0"></div> 
+		</div>
+		<div id="mid">
+			<div id="esc">Esports Collegiate Overwatch</div>
+			<div id="series-info">
+				<div class="map">3</div>
+			</div>
+		</div>
+		<div id="right" class="niu">
+			<div class="accent-bar"></div>
+			<div class="team-logo"></div>
+			<div class="team-name"></div>
+			<div id="home-team-score" class="team-score score-0"></div> 
+		</div>
+	</div>
+	<div id="controls" style="height: 20%; background-color: #fff">
+			<div id="controls-away">
+				<div id="team-select-away">
+					<select class="input" id="away-team" name="Select Left Team">
+						<option value="" onClick="returnActiveTeamAway()" disabled>Select Left Team</option>
+						<option value="akron" onClick="returnActiveTeamAway()">Akron</option>
+						<option value="bsu" onClick="returnActiveTeamAway()">Ball State</option>
+						<option value="bgsu" onClick="returnActiveTeamAway()">Bowling Green</option>
+						<option value="buffalo" onClick="returnActiveTeamAway()">Buffalo</option>
+						<option value="cmu" onClick="returnActiveTeamAway()">Central Michigan</option>
+						<option value="emu" onClick="returnActiveTeamAway()">Eastern Michigan</option>
+						<option value="kentstate" onClick="returnActiveTeamAway()">Kent State</option>
+						<option value="miami" onClick="returnActiveTeamAway()">Miami</option>
+						<option value="neu" onClick="returnActiveTeamAway()">Northeastern</option>
+						<option value="niu"  selected="" onClick="returnActiveTeamAway()">Northern Illinois</option>
+						<option value="nku" onClick="returnActiveTeamAway()">Northern Kentucky</option>
+						<option value="ohio" onClick="returnActiveTeamAway()">Ohio</option>
+						<option value="toledo" onClick="returnActiveTeamAway()">Toledo</option>
+						<option value="wmu" onClick="returnActiveTeamAway()">Western Michigan</option>
+					</select>
+				</div>
+				<div id="team-scores-away">
+					<div id="away-score-amount">
+						<label for="score-away">Score:</label>
+						<input id="score-away" class="input number" type="number" name="Away Score" min="0" max="99">
+						<input type="button" class="input" onclick="awayScore()" value="Enter">
+					</div>
+				</div>
+			</div>
+			<div id="controls-home">
+				<div id="team-select-home">
+					<select class="input" id="home-team" name="Select Right Team">
+						<option value="" onClick="returnActiveTeamHome()" disabled>Select Right Team</option>
+						<option value="akron" onClick="returnActiveTeamHome()">Akron</option>
+						<option value="bsu" onClick="returnActiveTeamHome()">Ball State</option>
+						<option value="bgsu" onClick="returnActiveTeamHome()">Bowling Green</option>
+						<option value="buffalo" onClick="returnActiveTeamHome()">Buffalo</option>
+						<option value="cmu" onClick="returnActiveTeamHome()">Central Michigan</option>
+						<option value="emu" onClick="returnActiveTeamHome()">Eastern Michigan</option>
+						<option value="kentstate" onClick="returnActiveTeamHome()">Kent State</option>
+						<option value="miami" onClick="returnActiveTeamHome()">Miami</option>
+						<option value="neu" onClick="returnActiveTeamHome()">Northeastern</option>
+						<option value="niu"  selected="" onClick="returnActiveTeamHome()">Northern Illinois</option>
+						<option value="nku" onClick="returnActiveTeamHome()">Northern Kentucky</option>
+						<option value="ohio" onClick="returnActiveTeamHome()">Ohio</option>
+						<option value="toledo" onClick="returnActiveTeamHome()">Toledo</option>
+						<option value="wmu" onClick="returnActiveTeamHome()">Western Michigan</option>
+					</select>
+				</div>
+				<div id="team-scores-home">
+					<div id="home-score-amount">
+						<label for="score-home">Home Score</label>
+						<input id="score-home" class="input number" type="number" name="Home Score" min="0" max="99">
+						<input type="button" class="input" onclick="homeScore()" value="Enter">
+					</div>
+				</div>
+			</div>
+			<div id="controls-all">
+				<div id="wrapper-text-input">
+					<input id="wrapper-text" class="input" type="text" value="" placeholder="Enter Special Info Text">
+					<script>
+						$( "#wrapper-text" )
+						  .keyup(function() {
+							var value = $( this ).val();
+							$( "#more-info" ).text( value );
+						  })
+						  .keyup();
+					</script>
+					<input id="hide-objects" type="checkbox" onClick="unHide()" name="Wrapper Bar">
+					<label for="hide-objects">Wrapper Bar</label>
+				</div>
+			</div>
+		</div>
+</body>
+</html>
